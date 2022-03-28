@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react';
 
-const history = ({ history, moveTo, currentMove }) => {
+const History = ({ history, moveTo, currentMove }) => {
   return (
     <ul>
       {history.map((_, move) => {
         return (
-          <li>
+          <li key={move}>
             <button
               style={{
-                fontWeight: move === currentMove ? "bold" : "normal",
+                fontWeight: move === currentMove ? 'bold' : 'normal',
               }}
               type="button"
               onClick={() => {
                 moveTo(move);
               }}
             >
-              {move === 0 ? `go to game start` : `go to move#${move}`}
+              {move === 0 ? 'Go to game start' : `Go to move #${move}`}
             </button>
           </li>
         );
@@ -24,4 +24,4 @@ const history = ({ history, moveTo, currentMove }) => {
   );
 };
 
-export default history;
+export default History;
